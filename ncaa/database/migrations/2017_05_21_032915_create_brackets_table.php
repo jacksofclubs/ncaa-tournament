@@ -15,7 +15,9 @@ class CreateBracketsTable extends Migration
     {
         Schema::create('brackets', function (Blueprint $table) {
             $table->increments('id');
+            // Use unsigned to only allow positive integers
             $table->integer('team_id')->unsigned();
+            // Add foreign key constraint
             $table->foreign('team_id')->references('id')->on('teams');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
