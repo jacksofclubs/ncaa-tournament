@@ -14,4 +14,11 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Here is some content for the home page!</p>
+        </div>
+    </div>
+</div>
 @endsection
