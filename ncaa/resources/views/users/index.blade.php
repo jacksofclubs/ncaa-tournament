@@ -1,7 +1,13 @@
-@extends('layouts.master')
+@extends ('layouts.master')
 
-@section('content')
+@section ('content')
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>List of Users</h1>
+            </div>
+
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <ul>
