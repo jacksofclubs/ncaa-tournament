@@ -35,8 +35,13 @@
                 <input type="text" class="form-control" id="password" name="password" value="password">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+            @include ('layouts.errors')
 
         </form>
+
     </div>
 @endsection
