@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display all users.
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,13 +20,13 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new user.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -37,7 +37,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create(request([
+            'first_name', 'last_name', 'username', 'email', 'password'
+        ]));
+
+
+        return redirect('/users');
     }
 
     /**
