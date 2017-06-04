@@ -3,7 +3,7 @@
 @section ('content')
     <div class="row">
         <div class="col-md-12">
-            <h1>List of Users</h1>
+            <h1>Users</h1>
         </div>
 
     </div>
@@ -11,7 +11,7 @@
         <div class="col-md-12">
             <ul>
                 @foreach ($users as $user)
-                    <li>{{ $user->first_name }} {{ $user->last_name }}</li>
+                    <li><a href="{{ url('/users/' . $user->id) }}">{{ $user->first_name }} {{ $user->last_name }}</a></li>
                 @endforeach
             </ul>
         </div>
