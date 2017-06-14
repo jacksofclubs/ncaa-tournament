@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Session;
 
 class UserController extends Controller
 {
@@ -49,6 +50,7 @@ class UserController extends Controller
             'first_name', 'last_name', 'username', 'email', 'password'
         ]));
 
+        Session::flash('flash_message', 'User ' . $request->first_name . ' created successfully!');
 
         return redirect('/users');
     }
@@ -72,8 +74,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
-    }
+        return view('users.edit', compact('user'));
+    }   
 
     /**
      * Update the specified resource in storage.
@@ -85,6 +87,10 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //
+
+        Session::flash('flash_message', 'User ' . $user->first_name . ' updated successfully!');
+
+        return redirect('/users');
     }
 
     /**
@@ -95,6 +101,11 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        // $this->authorize('destroy', $user);
+        $user->delete();
+        // Send the confirmation message to the redirect page, where it can be accessed
+        Session::flash('flash_message', 'User ' . $user->first_name . ' deleted successfully!');
+
+        return redirect('/users');
     }
 }
