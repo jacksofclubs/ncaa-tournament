@@ -21,7 +21,7 @@
             {{-- Can also do back button explicitly, like the line below --}}
             {{-- <a href="{{ url('/users/') }}" class="btn btn-default">Back</a> --}}
             <a href="{{ url('/users/' . $user->id . '/edit') }}" class="btn btn-primary">Edit User</a>
-            <form method="post" action="/users/{{ $user->id }}" style="display: inline">
+            <form method="post" action="/users/{{ $user->id }}" onsubmit="return confirm('Do you really want to delete the user?');" style="display: inline">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <button type="submit" class="btn btn-danger">Delete User</button>
