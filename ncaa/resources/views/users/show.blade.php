@@ -17,9 +17,10 @@
     </div>
     <div class="row">
         <div class="col-md-8">
-            <a href="{{ url()->previous() }}" class="btn btn-default">Back</a>
+            {{-- Can use previous for the back button, but this can cause issues --}}
+            {{-- <a href="{{ url()->previous() }}" class="btn btn-default">Back</a> --}}
             {{-- Can also do back button explicitly, like the line below --}}
-            {{-- <a href="{{ url('/users/') }}" class="btn btn-default">Back</a> --}}
+            <a href="{{ url('/users/') }}" class="btn btn-default">Back</a>
             <a href="{{ url('/users/' . $user->id . '/edit') }}" class="btn btn-primary">Edit User</a>
             <form method="post" action="/users/{{ $user->id }}" onsubmit="return confirm('Do you really want to delete the user?');" style="display: inline">
                 {{ csrf_field() }}
