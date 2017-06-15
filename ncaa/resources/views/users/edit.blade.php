@@ -34,6 +34,11 @@
             </div>
 
             <div class="form-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone_number" name="phone_number" value="{{ $user->phone_number }}">
+            </div>
+
+            <div class="form-group">
                 <a href="{{ url()->previous() }}" class="btn btn-default">Cancel</a>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
