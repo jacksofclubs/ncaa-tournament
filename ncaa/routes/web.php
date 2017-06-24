@@ -18,16 +18,18 @@ Route::get('/', function () {
 });
 
 // Users
-Route::get('/users', 'UserController@index');
-Route::get('/users/create', 'UserController@create');
-Route::post('/users', 'UserController@store');
-Route::get('/users/{user}', 'UserController@show');
-Route::delete('/users/{user}', 'UserController@destroy');
+Route::get('/users',             'UserController@index');
+Route::get('/users/create',      'UserController@create');
+Route::post('/users',            'UserController@store');
+Route::get('/users/{user}',      'UserController@show');
+Route::delete('/users/{user}',   'UserController@destroy');
 Route::get('/users/{user}/edit', 'UserController@edit');
-Route::patch('/users/{user}', 'UserController@update');
+Route::patch('/users/{user}',    'UserController@update');
 
 // Teams
-Route::get('/teams', 'TeamController@index');
+Route::get('/teams',        'TeamController@index');
+Route::get('/teams/create', 'TeamController@create');
+Route::post('/teams',       'TeamController@store');
 
 Auth::routes();
 
