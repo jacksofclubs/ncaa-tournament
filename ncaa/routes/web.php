@@ -33,7 +33,7 @@ Route::post('/teams',            'TeamController@store');
 Route::get('/teams/{team}',      'TeamController@show');
 Route::delete('/teams/{team}',   'TeamController@destroy');
 Route::get('/teams/{team}/edit', 'TeamController@edit');
-Route::patch('/teams/{user}',    'TeamController@update');
+Route::patch('/teams/{team}',    'TeamController@update');
 
 Auth::routes();
 

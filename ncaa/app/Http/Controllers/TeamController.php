@@ -41,7 +41,7 @@ class TeamController extends Controller
         $this->validate(request(), [
             'school_name' => 'required|string|max:255',
             'short_name'  => 'required|string|max:8',
-            'conference'   => 'required|string|max:255'
+            'conference'  => 'required|string|max:255'
         ]);
 
         Team::create(request([
@@ -85,7 +85,21 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+        $this->validate(request(), [
+            'school_name' => 'required|string|max:255',
+            'short_name'  => 'required|string|max:8',
+            'conference'  => 'required|string|max:255'
+        ]);
+
+        $team->school_name = $request->school_name;
+        $team->short_name  = $request->short_name;
+        $team->conference  = $request->conference;
+
+        $team->save();
+
+        Session::flash('flash_message', 'Team ' . $team->school_name . ' updated successfully!');
+
+        return redirect('/teams');
     }
 
     /**
