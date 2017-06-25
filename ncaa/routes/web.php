@@ -30,6 +30,7 @@ Route::patch('/users/{user}',    'UserController@update');
 Route::get('/teams',        'TeamController@index');
 Route::get('/teams/create', 'TeamController@create');
 Route::post('/teams',       'TeamController@store');
+Route::get('/teams/{team}', 'TeamController@show');
 
 Auth::routes();
 
