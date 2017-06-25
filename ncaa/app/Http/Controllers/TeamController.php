@@ -96,6 +96,11 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        // $this->authorize('destroy', $user);
+        $team->delete();
+        // Send the confirmation message to the redirect page, where it can be accessed
+        Session::flash('flash_message', 'Team ' . $team->school_name . ' deleted successfully!');
+
+        return redirect('/teams');
     }
 }
