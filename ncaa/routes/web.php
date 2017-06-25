@@ -27,11 +27,13 @@ Route::get('/users/{user}/edit', 'UserController@edit');
 Route::patch('/users/{user}',    'UserController@update');
 
 // Teams
-Route::get('/teams',           'TeamController@index');
-Route::get('/teams/create',    'TeamController@create');
-Route::post('/teams',          'TeamController@store');
-Route::get('/teams/{team}',    'TeamController@show');
-Route::delete('/teams/{team}', 'TeamController@destroy');
+Route::get('/teams',             'TeamController@index');
+Route::get('/teams/create',      'TeamController@create');
+Route::post('/teams',            'TeamController@store');
+Route::get('/teams/{team}',      'TeamController@show');
+Route::delete('/teams/{team}',   'TeamController@destroy');
+Route::get('/teams/{team}/edit', 'TeamController@edit');
+Route::patch('/teams/{user}',    'TeamController@update');
 
 Auth::routes();
 
