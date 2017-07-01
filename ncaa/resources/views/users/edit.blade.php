@@ -1,7 +1,7 @@
 @extends ('layouts.app')
 
 @section ('content')
-    <div class="col-md-8">
+    <div class="col-md-8 col-md-offset-2">
 
         <h1>Edit User {{ $user->first_name }} {{ $user->last_name }}</h1>
 

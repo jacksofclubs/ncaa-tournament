@@ -9,13 +9,13 @@
     @endif
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
             <h1>Teams</h1>
         </div>
 
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
             <ul>
                 @foreach ($teams as $team)
                     <li><a href="{{ url('/teams/' . $team->id) }}">{{ $team->school_name }}</a></li>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
             <a href="{{ url('/teams/create') }}" class="btn btn-primary">Add Team</a>
         </div>
     </div>

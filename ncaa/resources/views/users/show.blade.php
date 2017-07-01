@@ -2,12 +2,12 @@
 
 @section ('content')
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 col-md-offset-2">
             <h1>{{ $user->first_name }} {{ $user->last_name }}</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 col-md-offset-2">
             <label>Username: {{ $user->username }}</label>
             <br>
             <label>Phone Number: {{ $user->phone_number }}</label>
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 col-md-offset-2">
             {{-- Can use previous for the back button, but this can cause issues --}}
             {{-- <a href="{{ url()->previous() }}" class="btn btn-default">Back</a> --}}
             {{-- Can also do back button explicitly, like the line below --}}
