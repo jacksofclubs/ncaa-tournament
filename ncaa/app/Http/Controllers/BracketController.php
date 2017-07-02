@@ -91,4 +91,11 @@ class BracketController extends Controller
 
         return view ('brackets.selectUsers', compact('users'));
     }
+
+    public function selectTeams()
+    {
+        $teams = Team::all();
+
+        return view ('brackets.selectTeams', compact('teams'));
+    }
 }
