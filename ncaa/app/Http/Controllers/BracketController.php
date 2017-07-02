@@ -89,6 +89,6 @@ class BracketController extends Controller
     {
         $users = User::all();
 
-        return view ('brackets.selectUsers');
+        return view ('brackets.selectUsers', compact('users'));
     }
 }
