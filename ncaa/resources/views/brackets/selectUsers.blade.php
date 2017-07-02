@@ -21,7 +21,11 @@
 
     <div class="row" style="margin-top: 30px; text-align: right;">
         <div class="col-md-6 col-md-offset-3">
-            <a href="{{ url('/brackets/selectTeams') }}" class="btn btn-primary">Continue to Teams</a>
+            <a href="{{ url('/brackets/selectTeams') }}" class="btn btn-primary">
+                Continue
+                &nbsp;
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
 
