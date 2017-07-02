@@ -20,7 +20,7 @@
     <body>
         <div id="app">
             @include ('layouts.navbar')
-            <div class="container">
+            <div class="container" style="margin-bottom: 50px;">
                 @yield ('content')
             </div>
         </div>
