@@ -24,7 +24,7 @@
         <hr class="my-4">
         <p>Create your bracket today!</p>
         <p class="lead" style="margin-top: 75px;">
-            <a class="btn btn-primary btn-lg" href="{{ url('#') }}" role="button">Create Bracket</a>
+            <a class="btn btn-primary btn-lg" href="{{ url('/brackets/selectUsers') }}" role="button">Create Bracket</a>
         </p>
     </div>
 @endsection

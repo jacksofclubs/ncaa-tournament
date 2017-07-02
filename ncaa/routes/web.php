@@ -35,6 +35,9 @@ Route::delete('/teams/{team}',   'TeamController@destroy');
 Route::get('/teams/{team}/edit', 'TeamController@edit');
 Route::patch('/teams/{team}',    'TeamController@update');
 
+// Brackets
+Route::get('/brackets/selectUsers', 'BracketController@selectUsers');
+
 Auth::routes();
 
 // Home page of the application

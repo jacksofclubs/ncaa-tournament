@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Bracket;
+use App\User;
+use App\Team;
 use Illuminate\Http\Request;
 
 class BracketController extends Controller
@@ -81,5 +83,12 @@ class BracketController extends Controller
     public function destroy(Bracket $bracket)
     {
         //
+    }
+
+    public function selectUsers()
+    {
+        $users = User::all();
+
+        return view ('brackets.selectUsers');
     }
 }
