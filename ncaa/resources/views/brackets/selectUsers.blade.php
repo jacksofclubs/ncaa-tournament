@@ -21,7 +21,7 @@
 
     <div class="row" style="margin-top: 30px; text-align: right;">
         <div class="col-md-6 col-md-offset-3">
-            <a href="{{ url('/brackets/selectDivisions') }}" class="btn btn-primary">
+            <a href="{{ url('/brackets/selectRegions') }}" class="btn btn-primary">
                 Continue
                 &nbsp;
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i>
