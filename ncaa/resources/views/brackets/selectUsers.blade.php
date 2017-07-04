@@ -3,7 +3,7 @@
 @section ('content')
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <h1>Select Users</h1>
+            <h1>Who Will Be Participating?</h1>
         </div>
     </div>
 
