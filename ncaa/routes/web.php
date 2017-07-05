@@ -37,8 +37,8 @@ Route::patch('/teams/{team}',    'TeamController@update');
 
 // Brackets
 Route::get('/brackets/selectUsers',   'BracketController@selectUsers');
-Route::get('/brackets/selectTeams',   'BracketController@selectTeams');
 Route::get('/brackets/selectRegions', 'BracketController@selectRegions');
+Route::get('/brackets/selectTeams',   'BracketController@selectTeams');
 
 Auth::routes();
 
