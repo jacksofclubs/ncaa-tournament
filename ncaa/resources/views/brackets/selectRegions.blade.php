@@ -77,12 +77,13 @@
         </div>
 
         <div class="row" style="margin-top: 30px; text-align: right;">
-            <div class="col-md-6 col-md-offset-3">
-                <a href="{{ url('/brackets/selectTeams') }}" class="btn btn-primary">
+            <div class="form-group col-md-6 col-md-offset-3 ">
+                <a href="{{ url('/brackets/selectUsers') }}" class="btn btn-default">Back</a>
+                <button type="submit" class="btn btn-primary">
                     Continue
                     &nbsp;
                     <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                </a>
+                </button>
             </div>
         </div>
 
