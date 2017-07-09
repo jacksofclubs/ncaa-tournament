@@ -92,9 +92,9 @@ class BracketController extends Controller
         return view ('brackets.selectUsers', compact('users'));
     }
 
-    public function selectRegions()
+    public function selectRegions(Request $request)
     {
-        return view ('brackets.selectRegions');
+        return view ('brackets.selectRegions', compact('request'));
     }
 
     public function selectTeams()
