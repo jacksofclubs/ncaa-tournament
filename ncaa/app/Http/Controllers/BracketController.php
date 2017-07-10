@@ -97,11 +97,11 @@ class BracketController extends Controller
         return view ('brackets.selectRegions', compact('request'));
     }
 
-    public function selectTeams()
+    public function selectTeams(Request $request)
     {
         $teams = Team::all();
 
-        return view ('brackets.selectTeams', compact('teams'));
+        return view ('brackets.selectTeams', compact('teams'), compact('request'));
     }
 
 }
