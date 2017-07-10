@@ -2,6 +2,15 @@
 
 @section ('content')
 
+    {{ $request->session()->forget('region_ul') }} <!-- Delete existing if exists so no duplicates -->
+    {{ $request->session()->push('region_ul', $request->region_ul) }}
+    {{ $request->session()->forget('region_ur') }}
+    {{ $request->session()->push('region_ur', $request->region_ur) }}
+    {{ $request->session()->forget('region_ll') }}
+    {{ $request->session()->push('region_ll', $request->region_ll) }}
+    {{ $request->session()->forget('region_lr') }}
+    {{ $request->session()->push('region_lr', $request->region_lr) }}
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h1>Select Teams</h1>
