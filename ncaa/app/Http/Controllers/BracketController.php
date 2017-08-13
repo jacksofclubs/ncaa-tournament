@@ -37,9 +37,21 @@ class BracketController extends Controller
      */
     public function store(Request $request)
     {
-        // collect users from session variable
-        // collect region locations from session variable
-        // collect teams from request variable
+        // Collect users from session variable
+        $users = $request->session()->get('users');
+
+        // Collect region locations from session variable
+        $regions = Array(
+            'upperLeft'  => $request->session()->get('region_ul')[0],
+            'upperRight' => $request->session()->get('region_ur')[0],
+            'lowerLeft'  => $request->session()->get('region_ll')[0],
+            'lowerRight' => $request->session()->get('region_lr')[0]
+        );
+
+        // Collect teams from request variable
+        $teams = $request->teams;
+
+        // Create bracket object using the collected data
         $brackets = [];
 
         // store into database

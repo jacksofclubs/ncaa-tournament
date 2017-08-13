@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-2 col-md-offset-2" for="email">{{ $seed }} seed:</label>
                     <div class="col-md-5">
-                        <select class="form-control" id="sel1">
+                        <select class="form-control" id="sel1" name="teams[{{ $regionName . '-' . $seed }}]">
                             <option value="" selected disabled></option>
                             @foreach ($teams as $team)
                                 <option value="{{ $team->school_name }}">{{ $team->school_name }}</option>
