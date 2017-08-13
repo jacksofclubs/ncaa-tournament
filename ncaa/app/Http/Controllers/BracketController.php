@@ -37,7 +37,18 @@ class BracketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // collect users from session variable
+        // collect region locations from session variable
+        // collect teams from request variable
+        $brackets = [];
+
+        // store into database
+        // bracket information gets saved into brackets table - bracketID, region locations, etc
+        // active teams gets saved into pivot table - bracketID, teamID
+        // active users gets saved into pivot table - bracketID, userID
+
+        // TODO perhaps route to the show page for the created bracket
+        return view ('brackets.index', compact('brackets'));
     }
 
     /**
