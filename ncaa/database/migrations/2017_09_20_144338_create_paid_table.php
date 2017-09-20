@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBracketsTable extends Migration
+class CreatePaidTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateBracketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brackets', function (Blueprint $table) {
+        Schema::create('paid', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('active');
-            $table->integer('furthest_round');
+            $table->integer('bracket_id')->unsigned();
+            $table->foreign('bracket_id')->references('id')->on('brackets');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->boolean('paid');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateBracketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brackets');
+        Schema::dropIfExists('paid');
     }
 }

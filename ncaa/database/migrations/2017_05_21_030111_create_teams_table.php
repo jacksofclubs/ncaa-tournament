@@ -24,6 +24,14 @@ class CreateTeamsTable extends Migration
             $table->string('website')->nullable();
             $table->timestamps();
         });
+
+        // Pupulate the database with teams
+        // DB::table('teams')->insert(
+        //     array(
+        //         'email' => 'name@domain.com',
+        //         'verified' => true
+        //     )
+        // );
     }
 
     /**

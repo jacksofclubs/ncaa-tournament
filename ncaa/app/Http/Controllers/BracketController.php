@@ -52,6 +52,7 @@ class BracketController extends Controller
         $teams = $request->teams;
 
         // Create bracket object using the collected data
+        // TODO the below empty bracket is just a placeholder so the code continues. Delete this.
         $brackets = [];
 
         // store into database
