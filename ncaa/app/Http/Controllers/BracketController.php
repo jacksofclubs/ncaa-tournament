@@ -16,7 +16,8 @@ class BracketController extends Controller
      */
     public function index()
     {
-        //
+        $brackets = [];
+        return view ('brackets.index', compact('brackets'));
     }
 
     /**
@@ -52,16 +53,20 @@ class BracketController extends Controller
         $teams = $request->teams;
 
         // Create bracket object using the collected data
-        // TODO the below empty bracket is just a placeholder so the code continues. Delete this.
-        $brackets = [];
+        $array = [
+            'active' => 1,
+            'furthest_round' => 0
+        ];
+        Bracket::create($array);
 
         // store into database
+            // bracket_id is auto-incremented
+            // save user_id, team_id, region, seed
         // bracket information gets saved into brackets table - bracketID, region locations, etc
         // active teams gets saved into pivot table - bracketID, teamID
         // active users gets saved into pivot table - bracketID, userID
 
-        // TODO perhaps route to the show page for the created bracket
-        return view ('brackets.index', compact('brackets'));
+        return redirect('/brackets');
     }
 
     /**
