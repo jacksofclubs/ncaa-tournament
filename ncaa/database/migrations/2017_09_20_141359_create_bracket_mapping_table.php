@@ -38,6 +38,8 @@ class CreateBracketMappingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bracketmapping');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('bracket_mapping');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
