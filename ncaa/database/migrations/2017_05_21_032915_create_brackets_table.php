@@ -15,8 +15,10 @@ class CreateBracketsTable extends Migration
     {
         Schema::create('brackets', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('active');
-            $table->integer('furthest_round');
+            $table->string('short_description')->nullable();
+            $table->string('long_description')->nullable();
+            $table->boolean('active')->default(false);
+            $table->integer('round')->default(0);
             $table->timestamps();
         });
     }
