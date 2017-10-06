@@ -53,9 +53,6 @@ class BracketController extends Controller
         // Collect teams from request variable
         $teams = $request->teams;
 
-        // Create bracket object using the collected data
-        Bracket::create();
-
         // Save a new default draft and get the id
         $id = Draft::create()->id;
 
