@@ -6,6 +6,7 @@ use App\Bracket;
 use App\User;
 use App\Team;
 use App\Draft;
+use App\DraftUser;
 use Illuminate\Http\Request;
 
 class BracketController extends Controller
@@ -41,6 +42,7 @@ class BracketController extends Controller
     {
         // Collect users from session variable
         $users = $request->session()->get('users');
+        $users = $users[0];
 
         // Collect region locations from session variable
         $regions = Array(
@@ -55,6 +57,15 @@ class BracketController extends Controller
 
         // Save a new default draft and get the id
         $id = Draft::create()->id;
+        foreach ($users as $user) {
+            DraftUser::create(
+                array(
+                    'draft_id' => $id,
+                    'user_id' => $user
+                )
+            );
+        }
+
 
         // Now save all of the above information for the draft
 
