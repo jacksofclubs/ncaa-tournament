@@ -35,6 +35,10 @@ Route::delete('/teams/{team}',   'TeamController@destroy');
 Route::get('/teams/{team}/edit', 'TeamController@edit');
 Route::patch('/teams/{team}',    'TeamController@update');
 
+// Drafts
+Route::get('/drafts/create', 'DraftController@create');
+Route::post('/drafts',        'DraftController@store');
+
 // Brackets
 Route::get('/brackets',                'BracketController@index');
 Route::get('/brackets/selectUsers',    'BracketController@selectUsers');
