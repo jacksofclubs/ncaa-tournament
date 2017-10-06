@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bracket;
 use App\User;
 use App\Team;
+use App\Draft;
 use Illuminate\Http\Request;
 
 class BracketController extends Controller
@@ -53,11 +54,12 @@ class BracketController extends Controller
         $teams = $request->teams;
 
         // Create bracket object using the collected data
-        $array = [
-            'active' => 1,
-            'furthest_round' => 0
-        ];
-        Bracket::create($array);
+        Bracket::create();
+
+        // Save a new default draft and get the id
+        $id = Draft::create()->id;
+
+        // Now save all of the above information for the draft
 
         // store into database
             // bracket_id is auto-incremented
