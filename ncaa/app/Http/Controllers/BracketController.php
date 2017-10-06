@@ -41,8 +41,7 @@ class BracketController extends Controller
     public function store(Request $request)
     {
         // Collect users from session variable
-        $users = $request->session()->get('users');
-        $users = $users[0];
+        $users = $request->session()->get('users')[0];
 
         // Collect region locations from session variable
         $regions = Array(
