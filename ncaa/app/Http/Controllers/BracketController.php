@@ -7,6 +7,7 @@ use App\User;
 use App\Team;
 use App\Draft;
 use App\DraftUser;
+use App\DraftRegion;
 use Illuminate\Http\Request;
 
 class BracketController extends Controller
@@ -61,6 +62,15 @@ class BracketController extends Controller
                 array(
                     'draft_id' => $id,
                     'user_id' => $user
+                )
+            );
+        }
+        foreach ($regions as $location => $region) {
+            DraftRegion::create(
+                array(
+                    'draft_id' => $id,
+                    'location' => $location,
+                    'region' => $region
                 )
             );
         }
