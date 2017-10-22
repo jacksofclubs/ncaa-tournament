@@ -26,7 +26,7 @@
         ); 
     ?>
 
-    <form method="POST" action="/brackets" class="form-horizontal">
+    <form method="POST" action="/drafts" class="form-horizontal">
 
         {{--Session token--}}
         {{ csrf_field() }}

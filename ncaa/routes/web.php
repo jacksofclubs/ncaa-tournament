@@ -36,16 +36,17 @@ Route::get('/teams/{team}/edit', 'TeamController@edit');
 Route::patch('/teams/{team}',    'TeamController@update');
 
 // Drafts
-Route::get('/drafts/create', 'DraftController@create');
-Route::post('/drafts',        'DraftController@store');
+Route::get('/drafts/create',         'DraftController@create');
+Route::get('/drafts/selectUsers',    'DraftController@selectUsers');
+Route::get('drafts/selectRegions',   'DraftController@selectRegions');
+Route::post('/drafts/selectRegions', 'DraftController@selectRegions');
+Route::post('/drafts/selectTeams',   'DraftController@selectTeams');
+Route::get('/drafts',                'DraftController@index');
+Route::post('/drafts',               'DraftController@store');
 
 // Brackets
-Route::get('/brackets',                'BracketController@index');
-Route::get('/brackets/selectUsers',    'BracketController@selectUsers');
-Route::get('brackets/selectRegions',   'BracketController@selectRegions');
-Route::post('/brackets/selectRegions', 'BracketController@selectRegions');
-Route::post('/brackets/selectTeams',   'BracketController@selectTeams');
-Route::post('/brackets',               'BracketController@store');
+Route::get('/brackets',  'BracketController@index');
+Route::post('/brackets', 'BracketController@store');
 
 Auth::routes();
 

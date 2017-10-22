@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <form method="POST" action="/brackets/selectRegions">
+    <form method="POST" action="/drafts/selectRegions">
 
         {{--Session token--}}
         {{ csrf_field() }}

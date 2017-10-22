@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <form method="POST" action="/brackets/selectTeams">
+    <form method="POST" action="/drafts/selectTeams">
 
         {{--Session token--}}
         {{ csrf_field() }}
