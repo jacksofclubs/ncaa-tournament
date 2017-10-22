@@ -7,6 +7,7 @@ use App\User;
 use App\Team;
 use App\Draft;
 use App\DraftUser;
+use App\DraftTeam;
 use App\DraftRegion;
 use Illuminate\Http\Request;
 
@@ -71,6 +72,17 @@ class BracketController extends Controller
                     'draft_id' => $id,
                     'location' => $location,
                     'region' => $region
+                )
+            );
+        }
+        foreach ($teams as $regionSeed => $team) {
+            $data = explode('-', $regionSeed);
+            DraftTeam::create(
+                array(
+                    'draft_id' => $id,
+                    'team_id' => $team,
+                    'region' => $data[0],
+                    'seed' => $data[1]
                 )
             );
         }
