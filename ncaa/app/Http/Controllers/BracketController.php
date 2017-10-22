@@ -58,6 +58,8 @@ class BracketController extends Controller
 
         // Save a new default draft and get the id
         $id = Draft::create()->id;
+
+        // Save users
         foreach ($users as $user) {
             DraftUser::create(
                 array(
@@ -66,6 +68,8 @@ class BracketController extends Controller
                 )
             );
         }
+
+        // Save regions
         foreach ($regions as $location => $region) {
             DraftRegion::create(
                 array(
@@ -75,6 +79,8 @@ class BracketController extends Controller
                 )
             );
         }
+
+        // Save teams
         foreach ($teams as $regionSeed => $team) {
             $data = explode('-', $regionSeed);
             DraftTeam::create(
@@ -86,16 +92,6 @@ class BracketController extends Controller
                 )
             );
         }
-
-
-        // Now save all of the above information for the draft
-
-        // store into database
-            // bracket_id is auto-incremented
-            // save user_id, team_id, region, seed
-        // bracket information gets saved into brackets table - bracketID, region locations, etc
-        // active teams gets saved into pivot table - bracketID, teamID
-        // active users gets saved into pivot table - bracketID, userID
 
         return redirect('/brackets');
     }
