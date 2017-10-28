@@ -43,6 +43,7 @@ Route::post('/drafts/selectRegions', 'DraftController@selectRegions');
 Route::post('/drafts/selectTeams',   'DraftController@selectTeams');
 Route::get('/drafts',                'DraftController@index');
 Route::post('/drafts',               'DraftController@store');
+Route::get('/drafts/{draft}',        'DraftController@show');
 
 // Brackets
 Route::get('/brackets',  'BracketController@index');

@@ -104,7 +104,7 @@ class DraftController extends Controller
      */
     public function show(Draft $draft)
     {
-        //
+        return view('drafts.show', compact('draft'));
     }
 
     /**
