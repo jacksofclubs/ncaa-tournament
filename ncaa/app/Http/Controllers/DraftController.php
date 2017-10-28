@@ -19,7 +19,7 @@ class DraftController extends Controller
      */
     public function index()
     {
-        $drafts = [];
+        $drafts = Draft::all();
         return view ('drafts.index', compact('drafts'));
 
     }
