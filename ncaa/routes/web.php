@@ -44,6 +44,7 @@ Route::post('/drafts/selectTeams',   'DraftController@selectTeams');
 Route::get('/drafts',                'DraftController@index');
 Route::post('/drafts',               'DraftController@store');
 Route::get('/drafts/{draft}',        'DraftController@show');
+Route::delete('/drafts/{draft}',     'DraftController@destroy');
 
 // Brackets
 Route::get('/brackets',  'BracketController@index');

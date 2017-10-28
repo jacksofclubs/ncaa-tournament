@@ -138,7 +138,11 @@ class DraftController extends Controller
      */
     public function destroy(Draft $draft)
     {
-        //
+        $draft->delete();
+        // Send the confirmation message to the redirect page, where it can be accessed
+        Session::flash('flash_message', 'Draft ' . $draft->id . ' deleted successfully!');
+
+        return redirect('/drafts');
     }
 
     public function selectUsers()
