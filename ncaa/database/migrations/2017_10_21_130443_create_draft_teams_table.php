@@ -16,7 +16,9 @@ class CreateDraftTeamsTable extends Migration
         Schema::create('draft_teams', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('draft_id')->unsigned();
+            $table->foreign('draft_id')->references('id')->on('drafts');
             $table->integer('team_id')->unsigned();
+            $table->foreign('team_id')->references('id')->on('teams');
             $table->string('region');
             $table->string('seed');
             $table->timestamps();
@@ -30,6 +32,8 @@ class CreateDraftTeamsTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('draft_teams');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
