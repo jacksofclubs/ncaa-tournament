@@ -23,6 +23,7 @@
                     <li><a href="{{ url('/home') }}">Home</a></li>
                     <li><a href="{{ url('/users') }}">Users</a></li>
                     <li><a href="{{ url('/teams') }}">Teams</a></li>
+                    <li><a href="{{ url('/drafts') }}">Drafts</a></li>
                 @endif
             </ul>
 
