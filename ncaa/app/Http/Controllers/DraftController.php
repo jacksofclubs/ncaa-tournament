@@ -116,7 +116,7 @@ class DraftController extends Controller
      */
     public function edit(Draft $draft)
     {
-        //
+        return view('drafts.edit', compact('draft'));
     }
 
     /**
@@ -128,7 +128,21 @@ class DraftController extends Controller
      */
     public function update(Request $request, Draft $draft)
     {
-        //
+        $this->validate(request(), [
+            'short_description' => 'required|string|max:255',
+            'long_description'  => 'required|string|max:255',
+            'seconds_per_round' => 'required|string|max:255'
+        ]);
+
+        $draft->short_description = $request->short_description;
+        $draft->long_description  = $request->long_description;
+        $draft->seconds_per_round = $request->seconds_per_round;
+
+        $draft->save();
+
+        Session::flash('flash_message', 'Draft ' . $draft->id . ' updated successfully!');
+
+        return redirect('/drafts');
     }
 
     /**

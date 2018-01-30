@@ -45,6 +45,8 @@ Route::get('/drafts',                'DraftController@index');
 Route::post('/drafts',               'DraftController@store');
 Route::get('/drafts/{draft}',        'DraftController@show');
 Route::delete('/drafts/{draft}',     'DraftController@destroy');
+Route::get('/drafts/{draft}/edit',   'DraftController@edit');
+Route::patch('/drafts/{draft}',      'DraftController@update');
 
 // Brackets
 Route::get('/brackets',  'BracketController@index');
