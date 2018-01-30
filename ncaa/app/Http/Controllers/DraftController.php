@@ -9,6 +9,7 @@ use App\DraftUser;
 use App\DraftTeam;
 use App\DraftRegion;
 use Illuminate\Http\Request;
+use Session;
 
 class DraftController extends Controller
 {
@@ -138,6 +139,10 @@ class DraftController extends Controller
      */
     public function destroy(Draft $draft)
     {
+        // TODO perform this in a more efficient manner
+        \DB::delete('DELETE FROM draft_users   WHERE draft_id = ' . $draft->id);
+        \DB::delete('DELETE FROM draft_teams   WHERE draft_id = ' . $draft->id);
+        \DB::delete('DELETE FROM draft_regions WHERE draft_id = ' . $draft->id);
         $draft->delete();
         // Send the confirmation message to the redirect page, where it can be accessed
         Session::flash('flash_message', 'Draft ' . $draft->id . ' deleted successfully!');
