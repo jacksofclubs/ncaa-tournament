@@ -16,7 +16,7 @@ class CreateDraftRegionsTable extends Migration
         Schema::create('draft_regions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('draft_id')->unsigned();
-            $table->foreign('draft_id')->references('id')->on('drafts');
+            $table->foreign('draft_id')->references('id')->on('drafts')->onDelete('cascade');
             $table->string('location');
             $table->string('region');
             $table->timestamps();

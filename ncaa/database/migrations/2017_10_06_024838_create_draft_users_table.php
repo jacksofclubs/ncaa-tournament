@@ -16,9 +16,9 @@ class CreateDraftUsersTable extends Migration
         Schema::create('draft_users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('draft_id')->unsigned();
-            $table->foreign('draft_id')->references('id')->on('drafts');
+            $table->foreign('draft_id')->references('id')->on('drafts')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

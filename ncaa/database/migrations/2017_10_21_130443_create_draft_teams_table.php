@@ -16,9 +16,9 @@ class CreateDraftTeamsTable extends Migration
         Schema::create('draft_teams', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('draft_id')->unsigned();
-            $table->foreign('draft_id')->references('id')->on('drafts');
+            $table->foreign('draft_id')->references('id')->on('drafts')->onDelete('cascade');
             $table->integer('team_id')->unsigned();
-            $table->foreign('team_id')->references('id')->on('teams');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->string('region');
             $table->string('seed');
             $table->timestamps();
