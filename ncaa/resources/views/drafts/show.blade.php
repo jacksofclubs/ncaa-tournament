@@ -21,12 +21,13 @@
             {{-- <a href="{{ url()->previous() }}" class="btn btn-default">Back</a> --}}
             {{-- Can also do back button explicitly, like the line below --}}
             <a href="{{ url('/drafts/') }}" class="btn btn-default">Back</a>
-            <a href="{{ url('/drafts/' . $draft->id . '/edit') }}" class="btn btn-primary">Edit Draft</a>
+            <a href="{{ url('/drafts/' . $draft->id . '/edit') }}" class="btn btn-info">Edit Draft</a>
             <form method="post" action="/drafts/{{ $draft->id }}" onsubmit="return confirm('Do you really want to delete the draft?');" style="display: inline">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <button type="submit" class="btn btn-danger">Delete Draft</button>
             </form>
+            <a href="{{ url('/drafts/' . $draft->id . '/run') }}" class="btn btn-primary">Create Bracket</a>
         </div>
     </div>
 

@@ -183,4 +183,25 @@ class DraftController extends Controller
         return view ('drafts.selectTeams', compact('teams'), compact('request'));
     }
 
+    public function prepare(Draft $draft)
+    {
+        $draft_regions = DraftRegion::where('draft_id', $draft->id)->get();
+        $draft_teams   = DraftTeam::where('draft_id',   $draft->id)->get();
+        $draft_users   = DraftUser::where('draft_id',   $draft->id)->get();
+
+        $teams = [];
+        foreach ($draft_teams as $draft_team) {
+            $teams[] = Team::where('id', $draft_team->team_id)->get();
+        }
+
+        $users = [];
+        foreach ($draft_users as $draft_user) {
+            $users[] = User::where('id', $draft_user->user_id)->get();
+        }
+
+        return view(
+            'drafts.run', 
+            compact(['draft', 'draft_regions', 'draft_teams', 'draft_users', 'teams', 'users'])
+        );
+    }
 }
