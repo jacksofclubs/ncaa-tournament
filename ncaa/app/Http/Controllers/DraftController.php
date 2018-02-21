@@ -189,15 +189,17 @@ class DraftController extends Controller
         $draft_teams   = DraftTeam::where('draft_id',   $draft->id)->get();
         $draft_users   = DraftUser::where('draft_id',   $draft->id)->get();
 
-        $teams = [];
+        $draftTeamIds = [];
         foreach ($draft_teams as $draft_team) {
-            $teams[] = Team::where('id', $draft_team->team_id)->get();
+            $draftTeamIds[] = $draft_team->team_id;
         }
+        $teams = Team::whereIn('id', $draftTeamIds)->get();
 
-        $users = [];
+        $draftUserIds = [];
         foreach ($draft_users as $draft_user) {
-            $users[] = User::where('id', $draft_user->user_id)->get();
+            $draftUserIds[] = $draft_user->user_id;
         }
+        $users = User::whereIn('id', $draftUserIds)->get();
 
         return view(
             'drafts.run', 
