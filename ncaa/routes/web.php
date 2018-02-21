@@ -51,7 +51,7 @@ Route::get('/drafts/{draft}/run',    'DraftController@prepare');
 
 // Brackets
 Route::get('/brackets',  'BracketController@index');
-Route::post('/brackets', 'BracketController@store');
+Route::post('/brackets', 'BracketController@store'); // takes input from drafts/run.blade.php form
 
 Auth::routes();
 
