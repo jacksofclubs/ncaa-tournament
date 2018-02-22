@@ -14,7 +14,7 @@
         ];
     ?>
 
-    <form method="POST" action="/drafts/">
+    <form method="POST" action="/drafts/runDraft">
 
         {{ csrf_field() }}
 
@@ -48,6 +48,8 @@
                 </button>
             </div>
         </div>
+
+        <input type="hidden" name="draftId" value="{{ $draft->id }}">
         
     </form>
 @endsection
