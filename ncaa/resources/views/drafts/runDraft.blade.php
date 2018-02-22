@@ -17,16 +17,16 @@
                 <ul>
                     @foreach ($selectionOrder as $i => $userId)
                         <div class="form-group">
-                            <label class="control-label col-md-2 col-md-offset-2" >{{ $userId }}</label>
-<!--                             <div class="col-md-5">
-                                <select class="form-control" id="sel1" name="ranks[{{ $i+1 }}]">
+                            <label class="control-label col-md-2 col-md-offset-2" >User {{ $userId }}:</label>
+                            <div class="col-md-5">
+                                <select class="form-control" id="sel1" name="usersTeams[user-{{ $userId }}-pick{{ $i }}]">
                                     <option value="" selected disabled></option>
-                                    @foreach ($users as $user)
-                                        <option value="{{ $user->id }}">{{ $user->first_name }} {{ $user->last_name }}</option>
+                                    @foreach ($teams as $team)
+                                        <option value="{{ $team->id }}">{{ $team->school_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
- -->                        </div>
+                        </div>
                     @endforeach
                 </ul>
             </div>
