@@ -54,5 +54,7 @@
             </div>
         </div>
 
+        <input type="hidden" name="draftId" value="{{ $draft->id }}">
+
     </form>
 @endsection
