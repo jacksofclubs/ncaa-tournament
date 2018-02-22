@@ -48,10 +48,11 @@ Route::delete('/drafts/{draft}',     'DraftController@destroy');
 Route::get('/drafts/{draft}/edit',   'DraftController@edit');
 Route::patch('/drafts/{draft}',      'DraftController@update');
 Route::get('/drafts/{draft}/run',    'DraftController@prepare');
+Route::post('/drafts/runDraft',      'DraftController@runDraft');
 
 // Brackets
 Route::get('/brackets',  'BracketController@index');
-Route::post('/brackets', 'BracketController@store'); // takes input from drafts/run.blade.php form
+Route::post('/brackets', 'BracketController@store');
 
 Auth::routes();
 
