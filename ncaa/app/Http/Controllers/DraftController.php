@@ -185,9 +185,23 @@ class DraftController extends Controller
 
     public function prepare(Draft $draft)
     {
-        $draft_regions = DraftRegion::where('draft_id', $draft->id)->get();
-        $draft_teams   = DraftTeam::where('draft_id',   $draft->id)->get();
         $draft_users   = DraftUser::where('draft_id',   $draft->id)->get();
+
+        $draftUserIds = [];
+        foreach ($draft_users as $draft_user) {
+            $draftUserIds[] = $draft_user->user_id;
+        }
+        $users = User::whereIn('id', $draftUserIds)->get();
+
+        return view('drafts.run', compact(['draft', 'users']));
+    }
+
+    public function runDraft(Request $request)
+    {
+        $draft         = Draft::find($request->draftId);
+        $draft_regions = DraftRegion::where('draft_id', $draft->id)->get();
+        $draft_teams   = DraftTeam::where('draft_id', $draft->id)->get();
+        $draft_users   = DraftUser::where('draft_id', $draft->id)->get();
 
         $draftTeamIds = [];
         foreach ($draft_teams as $draft_team) {
@@ -201,9 +215,11 @@ class DraftController extends Controller
         }
         $users = User::whereIn('id', $draftUserIds)->get();
 
+        $selectionOrder = $request->ranks;
+
         return view(
-            'drafts.run', 
-            compact(['draft', 'draft_regions', 'draft_teams', 'draft_users', 'teams', 'users'])
+            'drafts.runDraft', 
+            compact(['draft', 'draft_regions', 'draft_teams', 'draft_users', 'teams', 'users', 'selectionOrder'])
         );
     }
 }
