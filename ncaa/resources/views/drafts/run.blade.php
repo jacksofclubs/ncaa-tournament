@@ -14,7 +14,7 @@
         ];
     ?>
 
-    <form method="POST" action="/brackets">
+    <form method="POST" action="/drafts/">
 
         {{ csrf_field() }}
 
@@ -35,6 +35,17 @@
                         </div>
                     @endforeach
                 </ul>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px; text-align: right;">
+            <div class="form-group col-md-6 col-md-offset-3 ">
+                <a href="{{ url('/drafts') }}" class="btn btn-default">Cancel</a>
+                <button type="submit" class="btn btn-primary">
+                    Continue
+                    &nbsp;
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
         
