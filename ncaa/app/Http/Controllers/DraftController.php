@@ -219,7 +219,7 @@ class DraftController extends Controller
 
         return view(
             'drafts.runDraft', 
-            compact(['draft', 'draft_regions', 'draft_teams', 'draft_users', 'teams', 'users', 'selectionOrder'])
+            compact(['draft', 'teams', 'users', 'selectionOrder'])
         );
     }
 }
