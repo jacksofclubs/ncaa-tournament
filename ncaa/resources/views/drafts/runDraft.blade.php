@@ -31,7 +31,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-2 col-md-offset-2" >User {{ $userId }}:</label>
                     <div class="col-md-5">
-                        <select class="form-control" id="sel1" name="usersTeams[user-{{ $userId }}-pick{{ $roundId+1 }}]">
+                        <select class="form-control" id="sel1" name="usersteams[{{ $userId }}][]">
                             <option value="" selected disabled></option>
                             @foreach ($teams as $team)
                                 <option value="{{ $team->id }}">{{ $team->school_name }}</option>
