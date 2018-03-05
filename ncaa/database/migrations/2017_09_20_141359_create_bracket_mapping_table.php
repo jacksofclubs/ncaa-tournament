@@ -24,9 +24,9 @@ class CreateBracketMappingTable extends Migration
             $table->foreign('team_id')->references('id')->on('teams');
             $table->string('region');
             $table->integer('seed');
-            $table->integer('points');
-            $table->boolean('active');
-            $table->integer('wins');
+            $table->integer('points')->default(0);
+            $table->boolean('active')->default(1);
+            $table->integer('wins')->default(0);
             $table->timestamps();
         });
     }
